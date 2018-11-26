@@ -1,0 +1,18 @@
+/*
+
+In this simple Gradle build script we have defined a single task named "hello". The task's action simply prints the string "Hello World" to the standard output.
+
+Since we haven't installed Gradle yet, we'll execute this task using the Gradle wrapper. The wrapper is a script that will download and install a specified version of Gradle.
+
+To run the task below, just type:
+./gradlew hello
+
+*/
+
+task hello {
+    description "This is my first task on Gradle!"
+    group "Our demo"
+    doLast {
+        println "Hello World!"
+    }
+}
