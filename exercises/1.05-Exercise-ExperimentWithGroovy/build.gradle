@@ -1,0 +1,53 @@
+/*
+
+In these exercises we'll explore the Groovy features most relevant to Gradle
+build scripts. Each topic will be contained in the action of a Gradle task, so
+to test run your code you'll need to run that particular task. If you get
+stuck, check out the solution.gradle file in this directory.
+
+*/
+
+task stringsAndTypes {
+    // Done: Run `$ gradle sAT` to execute the task with an abbreviated name
+    println "Nice work abbreviating the task name"
+
+    // Done: Create a variable named foo and assign it the value 4.2
+    def foo = 4.5
+
+    // Done: Print the value and class of foo
+    println "The value of foo is: $foo"
+
+    // Done: Use string interpolation to print the square root of 127
+    println "The square root of 127 is: ${Math.sqrt(127)}"
+
+    // Done: Assign the current date to foo and print it, along with its type
+    foo = new java.util.Date()
+    println "Current date: $foo"
+
+    // Done: Use the `substring` method to extract my name from this string
+    def hello = "Hello, Marcos.";
+    def myName = hello.substring(7, 13)
+    println "My name is $myName"
+
+    // Done: Use `toUpperCase` to capitalize and print my name
+    println "My name capitalized: ${myName.toUpperCase()}"
+}
+
+task closures {
+    // Done: Declare a closure that takes two arguments and adds them together
+    def sumClosure = { num1, num2 -> num1 + num2 }
+
+    // Done: Call your closure with arguments 17 and 25, and print the result
+    println "5 + 5 = ${sumClosure(5, 5)}"
+}
+
+task lists {
+    // Done: Declare a list containing 5 of your favorite candies
+    def candies = ["Nutella", "Fini", "Kit Kat", "Chocolate", "Lollipop"]
+
+    // Done: Create a new list of your candies in all caps
+    def candiesAllCaps = candies.collect { it.toUpperCase() }
+
+    // Done: Print each capital candy
+    candiesAllCaps.each { println it }
+}
