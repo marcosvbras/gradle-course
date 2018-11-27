@@ -1,0 +1,5 @@
+task suitUp {
+    doLast {
+	println "Suit Up!"
+    }
+}
