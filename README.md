@@ -63,6 +63,8 @@ C:\Users\<your username>\.gradle, and add the line `org.gradle.daemon=true`.
 
 Gradle has to do a significant amount of work to start up, mainly because it is required to use an instance of the JVM to run. This startup time can be mitigated by using the Gradle Demon. When Gradle's instructed to use a demon, a demon process has started, and continuously runs in the background, keeping the JVM instance alive. So that subsequent Gradle runs can use the same instance. By default, Android Studio always uses this as Gradle demon, when running Gradle from the command line however you'll have to explicitly enable it. Simply put you should always use a demon when it is possible.
 
+The build scripts are written in Groovy. Groovy interoperates extremely well with Java and has some special features that make it ideally suited for creating domain specific languages (DSLs). Gradle provides its own Groovy distribution, so we don't even need to install Groovy to get started.
+
 Gradle works with a concept called Tasks. A task is a self-contained unit of work that Gradle can reason about. A task has an action that do something, e.g. copy some files from one directory to another.
 
 ## Command Summary
@@ -70,4 +72,4 @@ Gradle works with a concept called Tasks. A task is a self-contained unit of wor
 - `gradle <task>`: Run a task
 - `gradle tasks`: See a list of available tasks
 - `gradle --status`: See all Daemons status
-- `gradle --stop`: Stop all running Daemons
+- `gradle --stop`: Stop running all Daemons
